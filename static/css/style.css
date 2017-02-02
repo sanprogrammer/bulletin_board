@@ -1,0 +1,15 @@
+/* Наименование товара */
+.extra p {
+  line-height: 100%;
+}
+.price {
+  font-size: large;
+  font-weight: bold;
+}
+.currency {
+  font-size: large;
+  font-weight: bold;
+}
+
+/* Карточка товара */
+.card_product {}

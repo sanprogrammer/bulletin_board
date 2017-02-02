@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GetAnimals.ru</title>
+  <link href="static/css/semantic.min.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="ui menu">
+    <div class="item">
+      <img src="static/img/logo.png" alt="изображение">
+      GetAnimals.ru
+    </div>
+    <a class="item">О проекте</a>
+    <div class="right menu">
+
+      <div class="item">
+        <a class="ui button">Войти</a>
+      </div>
+
+      <div class="item">
+        <a class="ui button">Регистрация</a>
+      </div>
+
+      <div class="ui dropdown item">
+        Меню <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item">Панель управления</a>
+          <a class="item">Профиль</a>
+          <a class="item">Выйти</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui container">
+    {{.LayoutContent}}
+  </div>
+
+  <script src="static/js/jquery-3.1.1.min.js"></script>
+  <script src="static/js/semantic.min.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>

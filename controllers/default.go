@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"bulletin_board/models"
 )
 
 type MainController struct {
@@ -9,7 +11,16 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.tpl"
+	c.Layout = "layout.html"
+	c.TplName = "default/index.html"
+
+	o := orm.NewOrm()
+	o.Using("default")
+
+	var products []*models.Products
+	num, err := o.QueryTable("products").All(&products)
+
+	if err != orm.ErrNoRows && num > 0 {
+		c.Data["Records"] = products
+	}
 }

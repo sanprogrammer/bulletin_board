@@ -1,0 +1,28 @@
+<!--<div class="author">-->
+  <!--Official website:-->
+  <!--<a href="http://{{.Website}}">{{.Website}}</a> /-->
+  <!--Contact me:-->
+  <!--<a class="email" href="mailto:{{.Email}}">{{.Email}}</a>-->
+<!--</div>-->
+
+<div class="ui items">
+  {{range $record := .Records}}
+  <div class="item">
+    <div class="image">
+      <img src="static/img/1.jpg" alt="изображение">
+    </div>
+    <div class="content">
+      <a href="/animals/{{$record.Id}}" class="header">{{$record.Name}}</a>
+      <div class="meta">
+        <span class="price">{{$record.Price}}</span>
+        <span class="currency">руб.</span>
+      </div>
+      <div class="extra">
+        <p class="company">&nbsp;</p>
+        <p class="metro">м. Речной вокзал</p>
+        <p class="date">{{date $record.Created "m.d.Y H:i:s"}}</p>
+      </div>
+    </div>
+  </div>
+  {{end}}
+</div>
