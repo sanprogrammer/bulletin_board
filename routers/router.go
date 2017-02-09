@@ -7,4 +7,5 @@ import (
 
 func init() {
     beego.Router("/", &controllers.MainController{})
+    beego.Router("/animals/:id([0-9]+", &controllers.MainController{}, "Get:Show")
 }

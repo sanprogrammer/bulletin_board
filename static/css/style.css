@@ -2,14 +2,14 @@
 .extra p {
   line-height: 100%;
 }
-.price {
-  font-size: large;
-  font-weight: bold;
-}
-.currency {
+.price, .currency {
   font-size: large;
   font-weight: bold;
 }
 
 /* Карточка товара */
-.card_product {}
+.card_product_price, .card_product_currency {
+  font-size: 180%;
+  font-weight: bold;
+  line-height: 160%;
+}

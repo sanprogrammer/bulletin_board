@@ -1,0 +1,59 @@
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="fourteen wide column">
+      <h1>{{.Name}}</h1>
+      <p>Размещено {{date .Created "m.d.Y H:i:s"}}</p>
+    </div>
+    <div class="two wide column">
+      <span class="card_product_price">{{.Price}}</span> <span class="card_product_currency">₽</span>
+    </div>
+  </div>
+
+  <div class="ui celled grid">
+    <div class="twelve wide column">
+      <div class="image">
+        <img src="/static/img/1.jpg" alt="изображение">
+      </div>
+    </div>
+    <div class="four wide column">
+      <p>
+        <button class="ui fluid blue button">
+        Показать телефон
+        <p>8926-xxx-xx-xx</p>
+        </button>
+      </p>
+      <button class="ui fluid green button">Написать сообщение</button>
+
+      <p>Компания</p>
+      <p>Дмитрий</p>
+      <p>Подтверждён</p>
+      <p>На Avito c июля 2015</p>
+      <p>
+        Адрес Москва, м. Тушинская
+      </p>
+      <p>Публичный профиль</p>
+    </div>
+  </div>
+
+  <div class="ui items">
+    {{range $record := .Record}}
+    <div class="item">
+      <div class="image">
+        <img src="static/img/1.jpg" alt="изображение">
+      </div>
+      <div class="content">
+        <a href="/animals/{{$record.Id}}" class="header">{{$record.Name}}</a>
+        <div class="meta">
+          <span class="price">{{$record.Price}}</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="extra">
+          <p class="company">&nbsp;</p>
+          <p class="metro">м. Речной вокзал</p>
+          <p class="date">{{date $record.Created "m.d.Y H:i:s"}}</p>
+        </div>
+      </div>
+    </div>
+    {{end}}
+  </div>
+</div>
